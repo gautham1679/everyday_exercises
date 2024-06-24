@@ -1,0 +1,101 @@
+#PROCEDURES
+
+DELIMITER //
+CREATE PROCEDURE select_all()
+BEGIN
+    select * from customers;
+END //
+DELIMITER ;
+
+
+#calling procedures
+
+call select_all();
+
+
+
+
+#FUNCTIONS
+
+DELIMITER **
+CREATE FUNCTION get_revenue()
+RETURNS INT
+DETERMINISTIC 
+BEGIN
+declare total_revenue int; 
+select sum(p.amount) into total_revenue
+from payment p
+inner join orders o on p.oid = o.oid
+where p.status = 'completed';
+return total_revenue; END**
+DELIMITER ;
+
+
+
+#calling functions
+
+
+select get_revenue();
+
+
+
+
+DELIMITER %%
+CREATE PROCEDURE get_customer(IN customer_id INT)
+BEGIN
+select * from customers where cid=customer_id;
+END %%
+
+
+#calling procedures
+
+call get_customer(2);
+
+
+
+
+
+DELIMITER ^^
+CREATE PROCEDURE get_total(OUT amount_sum INT)
+BEGIN
+select sum(p.amount) into amount_sum from products;
+END^^
+
+
+
+#calling procedures
+
+
+call get_total(@amount_sum)
+select @amount_sum as amount_sum
+
+
+
+#CURSORS
+
+DELIMITER **
+DECLARE @customer_no INT;
+
+
+select @customer = count(*)
+from customers
+
+print cast(@customer_count as varchar(10));
+delimiter;
+
+
+
+
+DELIMITER **
+DECLARE @total INT;
+
+
+select @total = count(*)
+from products
+where pname='HP Laptop'
+
+print cast(@total as varchar(10));
+delimiter;
+
+
+
