@@ -98,14 +98,33 @@ plt.xlabel("y")
 plt.legend()
 plt.show()'''
 
-x=[1,2,3,4,5]
+
+'''import numpy as np
+x =[1,2,3,4,5]
+x_indexes=np.arange(len(x))
+width=0.25
+
 y=[3,4,5,3,2]
-plt.bar(x,y,color="green")
+plt.bar(x_indexes-width,y,color="green")
 
 y1=[4,6,7,5,3]
-plt.bar(x,y1,color="red")
+plt.bar(x_indexes,y1,color="red")
 
 plt.ylabel("x")
 plt.xlabel("y")
 plt.legend()
+plt.show()'''
+
+
+
+
+#SCATTERPLOT
+
+
+girl=[78,50,39,59,60]
+boy=[48,75,64,57,54]
+range=[10,30,50,60,100]
+plt.scatter(range,girl,marker="^")
+plt.scatter(range,boy)
+plt.grid(True,linestyle="--")
 plt.show()
