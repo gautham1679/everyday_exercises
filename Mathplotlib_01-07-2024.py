@@ -121,10 +121,82 @@ plt.show()'''
 #SCATTERPLOT
 
 
-girl=[78,50,39,59,60]
+'''girl=[78,50,39,59,60]
 boy=[48,75,64,57,54]
 range=[10,30,50,60,100]
-plt.scatter(range,girl,marker="^")
-plt.scatter(range,boy)
+plt.scatter(range,girl,marker="^",label="girl")
+plt.scatter(range,boy,label="boy")
 plt.grid(True,linestyle="--")
+plt.legend()
+plt.show()'''
+
+
+
+'''import numpy as np
+a=np.random.uniform(0,6,200)
+plt.hist(a,5)
+plt.show()'''
+
+
+'''import numpy as np
+a=np.random.normal(10,1,200)
+plt.hist(a,200)
+plt.show()'''
+
+
+
+'''x = [1, 1, 2, 3, 3, 5, 7, 8, 9, 10,
+     10, 11, 11, 13, 13, 15, 16, 17, 18, 18,
+     18, 19, 20, 21, 21, 23, 24, 24, 25, 25,
+     25, 25, 26, 26, 26, 27, 27, 27, 27, 27,
+     29, 30, 30, 31, 33, 34, 34, 34, 35, 36,
+     36, 37, 37, 38, 38, 39, 40, 41, 41, 42,
+     43, 44, 45, 45, 46, 47, 48, 48, 49, 50,
+     51, 52, 53, 54, 55, 55, 56, 57, 58, 60,
+     61, 63, 64, 65, 66, 68, 70, 71, 72, 74,
+     75, 77, 81, 83, 84, 87, 89, 90, 90, 91
+     ]
+plt.style.use("ggplot")
+plt.hist(x, bins=10,edgecolor="white")
+plt.show()'''
+
+
+
+
+
+#AREA PLOT
+
+'''import numpy as np
+x=range(1,6)
+y=[1,4,6,8,4]
+
+plt.fill_between(x,y,color="blue",alpha=0.5)
 plt.show()
+'''
+
+
+'''import numpy as np
+x=range(1,6)
+y=[1,4,6,8,4]
+
+plt.fill_between(x,y,color="blue",alpha=0.5)
+plt.plot(x,y,color="darkblue")
+plt.show()'''
+
+
+
+
+#BOXPLOT
+
+
+import numpy as np
+'''data=np.random.normal(loc=0,scale=1,size=100)
+plt.boxplot(data)'''
+
+
+'''data1 = np.random.normal(loc=0, scale=1, size=100)
+data2 = np.random.normal(loc=2, scale=1.5, size=100)
+plt.boxplot([data1, data2],notch=True,patch_artist=True,
+            boxprops=dict(facecolor="red",linestyle="--"),
+            medianprops=dict(color="green"))
+plt.show()'''
